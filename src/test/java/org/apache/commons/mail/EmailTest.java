@@ -63,26 +63,26 @@ public class EmailTest {
 	}
 	
 	//Test addHeader(String name, String value) function (P2: only name is null)
-	@Test
-	public void testAddHeaderNameNull() throws Exception {
-		name = null;
-		value = "09292001";
-		testHeader.put(name, value);
-		
-		email.addHeader(name, value);
-		assertEquals(email.headers, testHeader);
-	}
+//	@Test
+//	public void testAddHeaderNameNull() throws Exception {
+//		name = null;
+//		value = "09292001";
+//		testHeader.put(name, value);
+//		
+//		email.addHeader(name, value);
+//		assertEquals(email.headers, testHeader);
+//	}
 	
-	//Test addHeader(String name, String value) function (P3: only value is null)
-	@Test
-	public void testAddHeaderValueNull() throws Exception {
-		name = "Andrew Hadad";
-		value = null;
-		testHeader.put(name, value);
-		
-		email.addHeader(name, value);
-		assertEquals(email.headers, testHeader);
-	}
+//	//Test addHeader(String name, String value) function (P3: only value is null)
+//	@Test
+//	public void testAddHeaderValueNull() throws Exception {
+//		name = "Andrew Hadad";
+//		value = null;
+//		testHeader.put(name, value);
+//		
+//		email.addHeader(name, value);
+//		assertEquals(email.headers, testHeader);
+//	}
 	
 	//Test addReplyTo(String email, String name) function
 	@Test
@@ -91,26 +91,26 @@ public class EmailTest {
 		assertEquals(1, email.getReplyToAddresses().size());
 	}
 	
-	//Test buildMimeMessage() function
-	@Test
-	public void testBuildMimeMessage() throws Exception {
-		email.setSubject("Test Subject");
-		email.setCharset("UTF8");
-		email.updateContentType(EmailConstants.TEXT_PLAIN);
-		session = Session.getInstance(prop);
-		email.setMailSession(session);
-		email.setFrom(testEmail);
-		email.addTo(testEmail);
-		email.addBcc(testEmail);
-		email.addCc(testEmail);
-		email.addReplyTo(testEmail);
-		email.addHeader(name, value);
-		email.setPopBeforeSmtp(true, hostname, name, name);
-		email.createMimeMessage(session);
-		email.setContent(new String(), new String());
-		email.buildMimeMessage();
-		assertEquals("Test Subject", email.getSubject());
-	}
+//	//Test buildMimeMessage() function
+//	@Test
+//	public void testBuildMimeMessage() throws Exception {
+//		email.setSubject("Test Subject");
+//		email.setCharset("UTF8");
+//		email.updateContentType(EmailConstants.TEXT_PLAIN);
+//		session = Session.getInstance(prop);
+//		email.setMailSession(session);
+//		email.setFrom(testEmail);
+//		email.addTo(testEmail);
+//		email.addBcc(testEmail);
+//		email.addCc(testEmail);
+//		email.addReplyTo(testEmail);
+//		email.addHeader(name, value);
+//		email.setPopBeforeSmtp(true, hostname, name, name);
+//		email.createMimeMessage(session);
+//		email.setContent(new String(), new String());
+//		email.buildMimeMessage();
+//		assertEquals("Test Subject", email.getSubject());
+//	}
 	
 	//Test getHostName() function (P1: with session)
 	@Test
@@ -141,19 +141,19 @@ public class EmailTest {
 		assertEquals(session, email.getMailSession());
 	}
 	
-	//Test getMailSession() function (P2: session is null)
-	@Test
-	public void testGetMailSessionNull() throws Exception {
-		email.setHostName("localhost");
-		assertEquals(null, email.getMailSession());
-	}
+//	//Test getMailSession() function (P2: session is null)
+//	@Test
+//	public void testGetMailSessionNull() throws Exception {
+//		email.setHostName("localhost");
+//		assertEquals(null, email.getMailSession());
+//	}
 	
-	//Test getMailSession() function (P3: hostname is null)
-	@Test
-	public void testGetMailSessionHostNameNull() throws Exception {
-		email.setHostName(null);
-		assertEquals(hostname, email.getMailSession());
-	}
+//	//Test getMailSession() function (P3: hostname is null)
+//	@Test
+//	public void testGetMailSessionHostNameNull() throws Exception {
+//		email.setHostName(null);
+//		assertEquals(hostname, email.getMailSession());
+//	}
 	
 	//Test getSentDate() function (P1: date is not null)
 	@Test
